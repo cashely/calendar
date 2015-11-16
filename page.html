@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+	<h3></h3>
+	<div class="content"></div>
+	<script src="jquery.min.js"></script>
+    <script src="test.js"></script>
+    <script>
+        $.ajax({
+            url:'page.json',
+            success:function(data){
+            	// console.log(data.date);
+                $(data.date).appendTo('h3');
+                $('h3').html(data.date);
+                // $(data.date).append($('h3');
+                $(data.content).appendTo('.content');
+                $('.content').html(data.content);
+            }
+        });
+    </script>
+</body>
+</html>
